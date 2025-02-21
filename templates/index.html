@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot</title>
+</head>
+<body>
+    <h1>Chatbot</h1>
+    <p>Welcome, {{ user_name }}!</p>
+<!--
+    <h2>Conversation History:</h2>
+    <pre>{{ conversation_history }}</pre>
+-->
+    {% if chatbot_response %}
+        <h2>Chatbot:</h2>
+        <p>{{ chatbot_response }}</p>
+    {% endif %}
+
+    <form method="post">
+        <label for="user_input">You:</label><br>
+        <input type="text" id="user_input" name="user_input"><br><br>
+        <input type="submit" value="Send">
+    </form>
+    <a href="{{ url_for('show_conversation_history', user_name=user_name) }}">View Conversation History</a>  <!--Link back to chat, passing username-->
+</body>
+</html>

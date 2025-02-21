@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Conversation History for {{ user_name }}</title>
+</head>
+<body>
+    <h1>Conversation History for {{ user_name }}</h1>
+
+    {% if conversation_history %}
+        <h2>Conversation:</h2>
+        <pre>{{ conversation_history }}</pre>
+    {% else %}
+        <p>No conversation history found for {{ user_name }}.</p>
+    {% endif %}
+
+    <a href="{{ url_for('chat', user_name=user_name) }}">Back to Chat</a>
+</body>
+</html>
