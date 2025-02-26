@@ -3,9 +3,9 @@ import sqlite3
 import os
 from langchain.prompts import PromptTemplate
 from flask import Flask, request, render_template, g, redirect, url_for
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()  # Load environment variables from .env file
+load_dotenv(find_dotenv())  # Load environment variables from .env file
 
 app = Flask(__name__)
 
